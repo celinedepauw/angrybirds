@@ -3,10 +3,11 @@
 namespace App\Controller;
 
 use App\Model\BirdModel;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BirdController
+class BirdController extends AbstractController
 {
     /**
      * @Route("/", name="home")
@@ -17,7 +18,9 @@ class BirdController
         $birdModel = new BirdModel();
         $birds = $birdModel->getBirds();
 
-        dump($birds);
-        return new Response('Home page');
+        // dump($birds);
+        return $this->render('bird/home.html.twig', [
+            'birds' => $birds
+        ]);
     }
 }
