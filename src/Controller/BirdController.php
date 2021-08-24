@@ -11,11 +11,12 @@ class BirdController extends AbstractController
 {
     /**
      * @Route("/", name="home")
+     * To get a "service" (object) from the controller
+     * we inject it in the method by its type (type-hinting)
      */
-    public function home()
+    public function home(BirdModel $birdModel)
     {
         // we get the birds list
-        $birdModel = new BirdModel();
         $birds = $birdModel->getBirds();
 
         // dump($birds);
@@ -27,9 +28,8 @@ class BirdController extends AbstractController
     /**
      * @Route("/bird/{id}", name="bird_show", requirements={"id"="\d+"})
      */
-    public function show($id)
+    public function show($id, BirdModel $birdModel)
     {
-        $birdModel = new BirdModel();
         $bird = $birdModel->getBird($id);
 
         // if the bird is not found

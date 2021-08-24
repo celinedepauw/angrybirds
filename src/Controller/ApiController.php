@@ -12,9 +12,8 @@ class ApiController extends AbstractController
     /**
      * @Route("/api/birds", name="api_birds")
      */
-    public function birds(): Response
+    public function birds(BirdModel $birdModel): Response
     {
-        $birdModel = new BirdModel();
         $birds = $birdModel->getBirds();
         
         return $this->json($birds);
