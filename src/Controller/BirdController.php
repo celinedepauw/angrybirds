@@ -30,6 +30,11 @@ class BirdController extends AbstractController
     {
         $birdModel = new BirdModel();
         $bird = $birdModel->getBird($id);
+
+        // if the bird is not found
+        if ($bird === null) {
+            throw $this->createNotFoundException('Bird not found');
+        }
         
         return $this->render('bird/show.html.twig', [
             'bird' => $bird,

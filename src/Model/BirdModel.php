@@ -54,10 +54,14 @@ class BirdModel
     /**
      * Get one bird
      * @param int $id Bird index
-     * @return array Birds list
+     * @return array|null Bird or null if not found
      */
     public function getBird(int $id)
     {
+        if (!isset($this->birds[$id])) {
+            return null;
+        }
+        
         return $this->birds[$id];
     }
 }
