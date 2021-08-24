@@ -24,7 +24,7 @@ class BirdController extends AbstractController
     }
 
     /**
-     * @Route("/bird/{id}", name="bird_show")
+     * @Route("/bird/{id}", name="bird_show", requirements={"id"="\d+"})
      */
     public function show($id)
     {
