@@ -22,4 +22,12 @@ class BirdController extends AbstractController
             'birds' => $birds
         ]);
     }
+
+    /**
+     * @Route("/bird/{id}", name="bird_show")
+     */
+    public function show($id)
+    {
+        dump($id);
+    }
 }

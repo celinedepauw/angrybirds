@@ -22,10 +22,11 @@
     <div class="row">
 
         <!-- Bird Card -->
-        {% for bird in birds %}
+        {# https://twig.symfony.com/doc/3.x/tags/for.html#iterating-over-keys-and-values #}
+        {% for index, bird in birds %}
         <div class="col-6 col-sm-6 col-md-4 col-lg-3">
             <div class="card mb-3 bird-card">
-                <a href="bird.html">
+                <a href="{{ path('bird_show', {id:index}) }}">
                     <h3 class="card-header bird-card__title">{{ bird.name }}</h3>
                     <img class="bird-card__image" src="{{ asset('images/'~ bird.image) }}" alt="symfony" width="100%">
                 </a>
