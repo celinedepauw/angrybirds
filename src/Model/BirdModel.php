@@ -50,4 +50,14 @@ class BirdModel
     {
         return $this->birds;
     }
+
+    /**
+     * Get one bird
+     * @param int $id Bird index
+     * @return array Birds list
+     */
+    public function getBird(int $id)
+    {
+        return $this->birds[$id];
+    }
 }

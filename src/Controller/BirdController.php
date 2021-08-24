@@ -28,6 +28,9 @@ class BirdController extends AbstractController
      */
     public function show($id)
     {
-        dump($id);
+        $birdModel = new BirdModel();
+        $bird = $birdModel->getBird($id);
+        
+        dd($bird);
     }
 }
