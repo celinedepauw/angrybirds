@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\BirdModel;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 use Symfony\Component\Routing\Annotation\Route;
 
 class BirdController extends AbstractController
@@ -46,6 +47,13 @@ class BirdController extends AbstractController
      */
     public function download()
     {
+        //download pdf directly
         return $this->file('files/angry_birds_2015_calendar.pdf');
+
+        // rename the file and display pdf in browser
+        // return $this->file('files/angry_birds_2015_calendar.pdf',
+        // 'user_calendar.pdf',
+        // ResponseHeaderBag::DISPOSITION_INLINE
+        // );
     }
 }
