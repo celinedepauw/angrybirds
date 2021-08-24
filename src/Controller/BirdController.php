@@ -40,4 +40,12 @@ class BirdController extends AbstractController
             'bird' => $bird,
         ]);
     }
+
+    /**
+     * @Route("/download", name="download")
+     */
+    public function download()
+    {
+        return $this->file('files/angry_birds_2015_calendar.pdf');
+    }
 }
