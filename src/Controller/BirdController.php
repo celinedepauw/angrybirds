@@ -38,6 +38,7 @@ class BirdController extends AbstractController
         }
         
         return $this->render('bird/show.html.twig', [
+            'id' => $id,
             'bird' => $bird,
         ]);
     }
