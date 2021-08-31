@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CartController extends AbstractController
 {
     /**
-     * @Route("/cart/add", name="cart_add")
+     * @Route("/cart/add", name="cart_add", methods={"POST"})
      */
     public function add(Request $request, SessionInterface $session): Response
     {
@@ -36,7 +36,7 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/cart", name="cart_list")
+     * @Route("/cart", name="cart_list", methods={"GET"})
      */
 
      public function list(SessionInterface $session)

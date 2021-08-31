@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class BirdController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="home", methods={"GET"})
      * To get a "service" (object) from the controller
      * we inject it in the method by its type (type-hinting)
      */
@@ -26,7 +26,7 @@ class BirdController extends AbstractController
     }
 
     /**
-     * @Route("/bird/{id}", name="bird_show", requirements={"id"="\d+"})
+     * @Route("/bird/{id}", name="bird_show", requirements={"id"="\d+"}, methods={"GET"})
      */
     public function show($id, BirdModel $birdModel)
     {
@@ -44,7 +44,7 @@ class BirdController extends AbstractController
     }
 
     /**
-     * @Route("/download", name="download")
+     * @Route("/download", name="download", methods={"GET"})
      */
     public function download()
     {

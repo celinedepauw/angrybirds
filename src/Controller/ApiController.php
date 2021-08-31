@@ -10,7 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ApiController extends AbstractController
 {
     /**
-     * @Route("/api/birds", name="api_birds")
+     * @Route("/api/birds", name="api_birds", methods={"GET"})
      */
     public function birds(BirdModel $birdModel): Response
     {
