@@ -12,6 +12,11 @@ body {
     margin-top: 90px;
 }
 
+.theme--dark {
+    background-image: url('images/0d250a59780745.5a2f309cb41b9.jpg');
+    background-color: #303d5b;
+}
+
 .navbar-brand-logo {
     background-image: url(images/logo.png);
     background-repeat: no-repeat;
